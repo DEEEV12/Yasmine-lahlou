@@ -236,6 +236,27 @@ footer a{display:inline-flex;align-items:center;gap:.55rem;text-decoration:none}
 .map iframe{display:block;width:100%;height:clamp(300px,45vw,450px);border:0}
 .map-actions{margin-block-start:1.2rem;display:flex;flex-wrap:wrap;gap:.8rem}
 @media(max-width:900px){.rcards{grid-template-columns:1fr}}
+
+/* Coiffeur.ma */
+.cm{background:var(--ivory);padding-block:clamp(3.5rem,7vw,6rem)}
+.cm-card{position:relative;overflow:hidden;isolation:isolate;display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem clamp(2rem,5vw,4.5rem);padding:clamp(2rem,5vw,4rem);border-radius:6px;background:var(--cocoa);color:var(--ivory);border:1px solid rgba(201,161,132,.4);box-shadow:0 30px 60px -38px rgba(28,18,16,.7);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1),border-color .4s,box-shadow .4s}
+.cm-card::before{content:"";position:absolute;z-index:-1;inset-block-start:-110px;inset-inline-end:-110px;width:320px;height:320px;border-radius:50%;border:1px solid rgba(201,161,132,.3);box-shadow:0 0 0 38px rgba(201,161,132,.05);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.cm-card::after{content:"";position:absolute;z-index:-1;inset-block-end:-140px;inset-inline-start:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(201,161,132,.16),transparent 70%)}
+.cm-card:hover{border-color:var(--gold);box-shadow:0 36px 70px -36px rgba(28,18,16,.85)}
+.cm-card:hover::before{transform:scale(1.15)}
+.cm-line{display:block;width:48px;height:1px;background:var(--gold);margin-block-end:1.4rem}
+.cm-card h2{font-size:clamp(1.9rem,4vw,3rem);margin-block-end:.8rem}
+.cm-card .lead{color:#CDB8AB;max-width:46ch}
+.btn-gold{background:var(--gold);color:var(--ink);box-shadow:0 10px 24px -12px rgba(201,161,132,.8)}
+.btn-gold:hover{background:var(--ivory)}
+.btn-gold svg{transition:transform .25s}
+.btn-gold:hover svg{transform:translate(2px,-2px)}
+html[dir="rtl"] .btn-gold svg{transform:scaleX(-1)}
+html[dir="rtl"] .btn-gold:hover svg{transform:scaleX(-1) translate(2px,-2px)}
+@media(max-width:760px){
+  .cm-card{grid-template-columns:1fr}
+  .cm-btn{width:100%}
+}
 </style>
 </head>
 <body>
@@ -370,6 +391,22 @@ footer a{display:inline-flex;align-items:center;gap:.55rem;text-decoration:none}
     </div>
   </section>
 
+  <section id="coiffeur" class="cm" aria-labelledby="cm-title">
+    <div class="wrap">
+      <div class="cm-card rv">
+        <div class="cm-text">
+          <span class="cm-line" aria-hidden="true"></span>
+          <h2 id="cm-title" data-i18n="cm_title"></h2>
+          <p class="lead" data-i18n="cm_desc"></p>
+        </div>
+        <a class="btn btn-gold cm-btn" href="https://coiffeur.ma/salon/ylpermanentbeautyink-casablanca" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="cm_btn"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="contact">
     <div class="wrap contact-grid">
       <div class="rv">
@@ -461,6 +498,7 @@ fr:{
  r1:"Expérience vraiment géniale ! Je suis venue pour une séance de lip blush et le résultat est bluffant. Le travail est soigné, l'hygiène irréprochable et le professionnalisme très élevé. Le résultat est totalement naturel, exactement comme je le voulais. Si vous cherchez une super adresse à Casablanca, n'hésitez pas. Je recommande vivement !",
  r2:"Génial ! 😍 Je l'ai offert à ma nièce et elle était très heureuse, elle a adoré ! 🎁❤️ La qualité est excellente et c'est encore plus beau en vrai. Je recommande vivement ! ✨",
  r3:"J'ai adoré mon expérience chez YL Permanent Beauty Ink ! Le résultat du lip blush est naturel et très beau. Yasmine est professionnelle et minutieuse, et vous met totalement à l'aise. Je recommande vivement à toutes celles qui cherchent un maquillage permanent au rendu naturel à Casablanca ! 🫶🏻",
+ cm_title:"Retrouvez-nous sur Coiffeur.ma", cm_desc:"Découvrez notre établissement, nos prestations et toutes les informations sur notre fiche Coiffeur.ma.", cm_btn:"Voir notre profil",
  footer_tag:"Le naturel, notre signature."
 },
 en:{
@@ -499,6 +537,7 @@ en:{
  r1:"A truly great experience! I came for a lip blush session and the result is stunning. The work is meticulous, the hygiene impeccable and the professionalism very high. The result is completely natural, exactly as I wanted. If you are looking for a great place in Casablanca, don't hesitate. Highly recommend!",
  r2:"Amazing! 😍 I gave it to my niece and she was so happy, she loved it! 🎁❤️ The quality is excellent and it looks even better in person. Highly recommend! ✨",
  r3:"I loved my experience at YL Permanent Beauty Ink! The lip blush result is natural and very beautiful. Yasmine is professional and meticulous, and puts you completely at ease. Highly recommended for anyone looking for natural-looking permanent makeup in Casablanca! 🫶🏻",
+ cm_title:"Find us on Coiffeur.ma", cm_desc:"Discover our studio, our services and all the information on our Coiffeur.ma listing.", cm_btn:"View our profile",
  footer_tag:"Natural is our signature."
 },
 ar:{
@@ -537,6 +576,7 @@ ar:{
  r1:"تجربة رائعة حقاً! ذهبتُ لجلسة ليبس بلاش، وكانت النتيجة مذهلة. العمل كان متقناً، والنظافة لا تشوبها شائبة، والاحترافية عالية جداً. النتيجة طبيعية تماماً، تماماً كما أردت. إذا كنتِ تبحثين عن مكان رائع في الدار البيضاء، فلا تترددي في زيارته. أنصح به بشدة!",
  r2:"رائع! 😍 أهديته لابنة أخي وكانت سعيدة للغاية، لقد أحبته! 🎁❤️ جودته ممتازة ويبدو أجمل على الطبيعة. أنصح به بشدة! ✨",
  r3:"لقد استمتعتُ بتجربتي في YL Permanent Beauty Ink للغاية! نتيجة الليبس بلاش طبيعية وجميلة جداً. ياسمين محترفة ودقيقة، وتجعلكِ تشعرين براحة تامة. أنصح به بشدة لكل من تبحث عن مكياج دائم بمظهر طبيعي في الدار البيضاء! 🫶🏻",
+ cm_title:"تجدونا على Coiffeur.ma", cm_desc:"اكتشفوا الاستوديو وخدماتنا وكل المعلومات على صفحتنا في Coiffeur.ma.", cm_btn:"عرض ملفنا",
  footer_tag:"الطبيعية هي توقيعنا."
 }};
 
